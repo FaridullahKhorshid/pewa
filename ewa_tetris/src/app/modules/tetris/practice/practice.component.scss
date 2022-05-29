@@ -1,0 +1,93 @@
+:host {
+
+  .game-container {
+    height: 502px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .bg-glass {
+    background: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .container {
+    padding: 2rem 0;
+    position: relative;
+
+    .game-frame {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .game-mask {
+      display: flex;
+      place-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      background-color: rgba(25, 31, 34, 0.8);
+
+      span {
+        font-weight: bold;
+        font-size: 25px;
+      }
+
+      button {
+        font-size: 20px;
+      }
+
+    }
+
+    .game-mask-image {
+      opacity: .5;
+      object-fit: cover;
+    }
+  }
+
+
+  .game-top {
+    display: flex;
+    place-items: center;
+    margin-bottom: 4px;
+    color: white;
+    font-size: 18px;
+
+    div.details {
+      display: flex;
+      padding-left: 0.25rem;
+      flex-direction: column;
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .game-buttons {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    grid-gap: 20px;
+
+    button {
+      margin: 0 2px;
+    }
+  }
+
+  .game-controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  @media only screen and (max-width: 770px) {
+    #opponent-game-container {
+      display: none;
+    }
+  }
+
+  @media only screen and (min-width: 770px) {
+    .game-controls {
+      display: none;
+    }
+  }
+}

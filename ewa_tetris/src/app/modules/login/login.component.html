@@ -1,0 +1,67 @@
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-xl-10">
+      <div class="card rounded-3 text-black">
+        <div class="row g-0">
+          <div class="col-lg-6">
+            <div class="card-body p-md-5 mx-md-4">
+
+              <div class="text-center">
+                <img src="/assets/images/logo.png" style="width: 300px;" alt="logo">
+                <h4 class="mt-1 mb-5 pb-1">Welcome to Tetris</h4>
+              </div>
+
+              <form (ngSubmit)="onSubmit()" #login="ngForm">
+                <p>Please login to your account</p>
+
+                <div class="form-floating mb-2">
+                  <input type="email" id="emailInput" class="form-control" name="test1" [(ngModel)]="loginUser.username" #email="ngModel" required>
+                  <label for="emailInput">Username</label>
+                </div>
+                <div *ngIf="!email.valid && (email.touched || email.dirty)">
+                  <p class="err-message">Enter a valid e-mail</p>
+                </div>
+
+                <div class="form-floating mb-2">
+                  <input type="password" id="passwordInput" class="form-control" name="test2" [(ngModel)]="loginUser.password" #password="ngModel" required>
+                  <label for="passwordInput">Password</label>
+                </div>
+                <div class="" *ngIf="!password.valid && (password.touched || password.dirty)">
+                  <p class="err-message">Enter a password</p>
+                </div>
+
+                <div class="text-center pt-1 mb-5 pb-1">
+                  <div class="err-message mb-1" *ngIf="errorMessage">
+                    {{errorMessage}}
+                  </div>
+                  <button [disabled]="!login.valid" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 btn-rounded btn-custom" type="submit">
+                    <i class="fas fa-sign-in-alt mx-2"></i>Log in
+                  </button>
+<!--                  <a class="text-muted" href="#!">Forgot password?</a>-->
+                </div>
+
+
+                <div class="d-flex align-items-center justify-content-center pb-4">
+                  <p class="mb-0 me-2">Don't have an account?</p>
+                  <button type="button" class="btn btn-outline-danger btn-rounded" routerLink='/login/sign-up'>Create new</button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+          <div class="col-lg-6 d-flex align-items-center gradient-custom-2 login-text">
+            <div class="text-black px-3 py-4 p-md-5 mx-md-4">
+              <h4 class="mb-4">Tetris is not just a game</h4>
+              <p class="small mb-0">
+                Tetris is a classic masterpiece that's easy to play, but difficult to master. It has challenged
+                players
+                from all over the world for decades. Think it's easy? Think you can reach the top?
+                Login, pit yourself against others, and find out what you're made off.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

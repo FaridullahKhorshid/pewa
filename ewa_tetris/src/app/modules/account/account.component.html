@@ -1,0 +1,50 @@
+<div class="container py-4">
+  <div class="d-flex justify-content-between">
+    <h1>Welcome {{username}}</h1>
+    <div>
+      <button class="btn btn-rounded btn-success" id="createButton" routerLink="/tetris/create"><i
+        class="fas fa-plus"></i></button>
+    </div>
+  </div>
+
+  <div class="row d-flex">
+    <div class="col-lg-4 col-sm-12 px-1">
+      <div class="card mb-4 bg-glass">
+        <div class="card-body text-center">
+          <img src="/assets/images/user.svg" alt="avatar"
+               class="rounded-circle img-fluid" style="width: 150px;">
+          <h3 class="my-3">{{username}}</h3>
+          <p class=" mb-1">Total points: {{totalPoints}}</p>
+          <p class=" mb-4">Total games: {{totalGames}}</p>
+          <div class="d-flex justify-content-center mb-2">
+            <button type="button" class="btn btn-warning btn-rounded">
+              <i class="fa fa-user-plus mx-1"></i> Follow
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-sm-12 px-1 history">
+      <div class="card mb-4 bg-glass">
+        <h3 class="p-2">Games history</h3>
+        <div class="row px-2 py-1 title">
+          <div class="col-1">#</div>
+          <div class="col-4">Title</div>
+          <div class="col-4">Score</div>
+          <div class="col-3">Multiplayer</div>
+        </div>
+
+        <div class="alert alert-warning" role="alert" data-mdb-color="success" *ngIf="!games || !games.length">
+          <i class="fas fa-check-circle me-3"></i> Games not found! create a new one.
+        </div>
+
+        <div class="row px-2 py-1" *ngFor="let game of games">
+          <div class="col-1">{{game.id}}</div>
+          <div class="col-4">{{game.title}}</div>
+          <div class="col-4">{{getScore(game)}}</div>
+          <div class="col-3"><i class="fas {{isMultiPlayer(game) ? 'fa-check-circle': 'fa-times-circle'}}"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

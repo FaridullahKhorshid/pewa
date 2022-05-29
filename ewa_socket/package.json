@@ -1,0 +1,22 @@
+{
+  "name": "ewa_socket",
+  "version": "1.0.0",
+  "description": "ewa socket",
+  "scripts": {
+    "build": "tsc -p ./",
+    "start": "concurrently -k \"tsc -p ./ -w\" \"nodemon dist/server.js",
+    "serve": "node dist/server.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "socket.io": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.9",
+    "concurrently": "^6.4.0",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.5.2"
+  }
+}

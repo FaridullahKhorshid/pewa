@@ -1,0 +1,10 @@
+.login-text {
+  font-size: 25px;
+}
+
+
+@media only screen and (max-width: 994px) {
+  .login-text{
+    display: none !important;
+  }
+}

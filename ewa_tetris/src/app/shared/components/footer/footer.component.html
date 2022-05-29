@@ -1,0 +1,42 @@
+<!-- Footer -->
+<footer class="text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <section class="">
+      <p class="d-flex justify-content-center align-items-center">
+        <ng-container *ngIf="!isLoggedIn">
+          <span class="me-3">Register for free</span>
+          <button type="button" class="btn btn-outline-warning btn-rounded" routerLink="/login/create">
+            Sign up!
+          </button>
+        </ng-container>
+        <ng-container *ngIf="isLoggedIn">
+          <span class="me-3">Play tetris now!</span>
+          <button type="button" class="btn btn-outline-warning btn-rounded" routerLink="/tetris">
+            Play!
+          </button>
+        </ng-container>
+      </p>
+    </section>
+    <!-- Section: CTA -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3 copyright-div">
+    © 2020 Copyright:
+    <a href="https://tetris.faridullah.com/">Tetris</a>
+  </div>
+  <!-- Copyright -->
+
+  <div class="side-buttons">
+    <button class="btn btn-info" (click)="openModal()"><i class="fas fa-info"></i></button>
+    <button class="btn btn-dark " *ngIf="isLoggedIn" (click)="toggleChat()"><i class="fas fa-comment-alt"></i></button>
+  </div>
+
+
+</footer>
+
+<app-chat *ngIf="isChatOpen && isLoggedIn" (toggleChatEvent)="toggleChat()"></app-chat>
+
+<!-- Footer -->

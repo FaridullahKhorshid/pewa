@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>10</y>
+      <w>320</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>app.entity::Game
+--
+-id: int
+-userId: int
+-openStatus: boolean
+-createdBy: User
+-title: String
+-multiPlayer = true: Boolean
+-gameFinished = false: Boolean
+-users = new ArrayList(): List&lt;GameUser&gt;
+--
++Game(): ctor
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>300</y>
+      <w>360</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>app.entity::GameUser
+--
+-id: int
+-user: User
+-game: Game
+-userId: int
+-gameId: int
+-score: Long
+--
++GameUser(): ctor
++GameUser(Game game, User user, Long score): ctor
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>560</y>
+      <w>390</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>app.entity::User
+--
+-id: int
+-username: String
+-hashedPw: String
+-games = new ArrayList(): List&lt;GameUser&gt;
+--
++User(): ctor
++User(String username, String hashedPw): ctor
++validateEncodedPassword(String givenPassword): boolean
++addGame(Game game, Long score): void
++removeGame(Game game): void
++equals(Object o): boolean
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>140</y>
+      <w>40</w>
+      <h>530</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1</panel_attributes>
+    <additional_attributes>20.0;510.0;20.0;510.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>190</y>
+      <w>240</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1, 2
+Game contains 1 or 2 GameUsers </panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>460</y>
+      <w>160</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..* 
+User has GameUser</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

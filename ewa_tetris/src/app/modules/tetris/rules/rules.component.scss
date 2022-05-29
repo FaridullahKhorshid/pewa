@@ -1,0 +1,23 @@
+.rules {
+  padding-top: 50px;
+  padding-bottom: 100px;
+
+  .card {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    place-items: center;
+  }
+  .title{
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 994px) {
+  .image-div {
+    display: none;
+  }
+  .card {
+    display: block !important;
+    //grid-template-columns: 1fr;
+  }
+}

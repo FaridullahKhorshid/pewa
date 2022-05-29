@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+  tetris_backend:
+    container_name: tetris_backend
+    build: ./backend
+    restart: unless-stopped
+    # ports: 
+    #   - "5000"
+
+  tetris_socket:
+    container_name: tetris_socket
+    build: ./socket
+    restart: unless-stopped
+#    ports:
+#      - "3000:3000"
+
+  tetris:
+    container_name: tetris
+    build: ./frontend
+    restart: unless-stopped
+    # ports: 
+    #   - "80"
+
+networks:
+  default:
+    external:
+      name: main

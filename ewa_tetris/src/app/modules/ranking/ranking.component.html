@@ -1,0 +1,30 @@
+<div class="container py-4">
+  <div class="d-flex justify-content-between">
+    <h1>Top 100 players</h1>
+  </div>
+  <div class="card bg-glass">
+    <div class="card-body">
+
+      <div class="row px-2 py-1 title">
+        <div class="col-2" title="position">Profile</div>
+        <div class="col-2" title="position">#</div>
+        <div class="col-4">Username</div>
+        <div class="col-2">Games played</div>
+        <div class="col-2">Score</div>
+      </div>
+
+      <div role="alert" data-mdb-color="success" class="alert alert-success  m-0 ng-star-inserted"
+           *ngIf="topPlayers.length == 0">
+        <i class="fas fa-check-circle me-3"></i> The are no top players! be the first one...
+      </div>
+
+      <div class="row" *ngFor="let player of topPlayers; let i = index">
+        <div class="col-2"><img src="assets/images/user.svg" height="40" width="40" alt="user"></div>
+        <div class="col-2">{{i + 1}}</div>
+        <div class="col-4"><strong>{{player.username}}</strong></div>
+        <div class="col-2">{{player.totalGame}}</div>
+        <div class="col-2">{{player.totalScore}}</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+/.idea/
+/ewa_backend/.mvn/
+/ewa_socket/node_modules/
+/ewa_socket/dist/
+/ewa_deploy/socket/server/
+/ewa_deploy/frontend/tetris/
+/ewa_deploy/backend/server/

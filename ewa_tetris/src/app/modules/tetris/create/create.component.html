@@ -1,0 +1,41 @@
+<div class="container py-4">
+
+
+  <div class="col-md-6 col-sm-12">
+    <div class="w-100">
+      <h1>Set up your game!</h1>
+    </div>
+
+    <div class="card bg-glass">
+      <div class="row m-0">
+        <div class="col-12 pt-2">
+
+          <h3>Game settings:</h3>
+
+          <div class="form-floating mb-4">
+            <input type="text" id="title" class="form-control" [(ngModel)]="game.title"/>
+            <label for="title">Title</label>
+          </div>
+          <!-- Checked switch -->
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="multiplayer" [(ngModel)]="game.multiPlayer" checked/>
+            <label class="form-check-label" for="multiplayer">Is multiplayer game</label>
+          </div>
+
+          <div class="alert alert-warning mt-2" role="alert" data-mdb-color="warning" *ngIf="this.errorMessage">
+            {{errorMessage}}
+          </div>
+
+          <div class="text-center pt-1 mb-4 mt-1 mt2">
+            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 btn-rounded btn-custom"
+                    type="button" (click)="addGame()">
+              <i class="fas fa-gamepad"></i> Create game
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

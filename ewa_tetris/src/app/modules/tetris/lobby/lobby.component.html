@@ -1,0 +1,25 @@
+<div class="container py-4">
+  <div class="d-flex justify-content-between">
+    <h1>Play tetris online</h1>
+    <div>
+      <button class="btn btn-rounded btn-success" id="createButton" routerLink="/tetris/create"><i class="fas fa-plus"></i></button>
+    </div>
+  </div>
+  <div class="card bg-glass">
+    <div class="card-body">
+
+      <div class="alert alert-warning" role="alert" data-mdb-color="success" *ngIf="!games || !games.length">
+        <i class="fas fa-check-circle me-3"></i> Games not found! create a new one.
+      </div>
+
+      <div class="row" *ngFor="let game of games">
+        <div class="col-4"><strong>{{game.title}}</strong></div>
+        <div class="col-3">{{game.id}}</div>
+        <div class="col-3"></div>
+        <div class="col-2 buttons-col">
+          <button class="btn btn-rounded btn-dark w-100" id="joinButton" routerLink="play/{{game.id}}"><i class="fas fa-play mx-1"></i> Join</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

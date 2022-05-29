@@ -1,0 +1,33 @@
+:host {
+
+  h1 {
+    color: white;
+  }
+
+  .bg-glass {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .card-body .row {
+
+    > div {
+      display: flex;
+      place-items: center;
+    }
+
+    padding: 4px 0;
+
+    &:not(:first-child) {
+      border-top: #2D1E2F solid 2px;
+    }
+
+    .buttons-col {
+      text-align: center;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+    }
+  }
+}
